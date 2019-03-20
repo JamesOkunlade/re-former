@@ -9,6 +9,7 @@
 </form> -->
 
 
+<!---
 <%= form_tag('/users') %>
   <%= label_tag :username  %>
   <%= text_field_tag :username, params[:username] %>
@@ -17,4 +18,13 @@
   <%= label_tag :password %>
   <%= text_field_tag :password, params[:password] %>
 
-  <%= submit_tag "Submit" %>
+  <%= submit_tag "Submit" %> --->
+
+
+
+<%= form_for @user do |f| %>
+  Username  : <%= f.text_field :username, placeholder: 'Your user name here' %><br />
+  Email     : <%= f.text_field :email, placeholder: 'Your email here' %><br />
+  Password  : <%= f.password_field :password, placeholder: 'Input your password here' %><br />
+  <%= f.submit %>
+<% end %>
